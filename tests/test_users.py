@@ -45,6 +45,15 @@ def test_read_user_deve_retornar_lista_de_usuario_vazia(client):
     assert response.json() == {'users': []}
 
 
+def test_read_user_with_users(client, user, other_user):
+    user_schema_one = UserPublic.model_validate(user).model_dump()
+    user_schema_two = UserPublic.model_validate(other_user).model_dump()
+
+    response = client.get('users/')
+
+    assert response.json() == {'users': [user_schema_one, user_schema_two]}
+
+
 def test_read_user_deve_retornar_payload_de_resposta_correto(client, user):
     user_schema = UserPublic.model_validate(user).model_dump()
     response = client.get('/users/')
@@ -84,6 +93,21 @@ def test_update_user_payload_de_resposta_correta(client, user, token):
     }
 
 
+def test_update_with_wrong_user(client, other_user, token):
+    response = client.put(
+        f'/users/{other_user.id}',
+        headers={'Authorization': f'Bearer {token}'},
+        json={
+            'username': 'julia',
+            'email': 'julia@example.com',
+            'password': 'mynewpassword',
+        },
+    )
+
+    assert response.status_code == HTTPStatus.FORBIDDEN
+    assert response.json() == {'detail': 'Not enough permission'}
+
+
 # def test_update_user_valida_statuscode_404_usuario_nao_encontrado(client):
 #     response = client.put(
 #         '/users/5',
@@ -113,6 +137,16 @@ def test_delete_user_valida_payload_de_resposta_correta(client, user, token):
     )
 
     assert response.json() == {'message': 'User deleted'}
+
+
+def test_delete_wrong_user(client, token, other_user):
+    response = client.delete(
+        f'/users/{other_user.id}',
+        headers={'Authorization': f'Bearer {token}'},
+    )
+
+    assert response.status_code == HTTPStatus.FORBIDDEN
+    assert response.json() == {'detail': 'Not enough permission'}
 
 
 # def test_delete_user_valida_statuscode_404(client):
