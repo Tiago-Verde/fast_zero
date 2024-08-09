@@ -45,5 +45,3 @@ class TodoPublic(TodoSchema):
 
 class TodoList(BaseModel):
     todos: list[TodoPublic]
-
-    

@@ -31,6 +31,10 @@ freezegun = "^1.5.1"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.ruff.lint.pylint]
+max-positional-args = 7
+max-args = 7
+
 [tool.ruff]
 line-length = 79
 extend-exclude = ['migrations']
@@ -38,6 +42,7 @@ extend-exclude = ['migrations']
 [tool.ruff.lint]
 preview = true
 select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+
 
 [tool.ruff.format]
 preview = true
@@ -51,6 +56,6 @@ addopts = '-p no:warnings'
 lint = 'ruff check . && ruff check . --diff'
 format = 'ruff check . --fix && ruff format .'
 run = 'fastapi dev fast_zero/app.py'
-pre_test = 'task lint'
+pre_test = 'task format'
 test = 'pytest -s -x --cov=fast_zero -vv -x'
 post_test = 'coverage html'
