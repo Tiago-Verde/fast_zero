@@ -24,4 +24,8 @@ jobs:
         run: poetry install
 
       - name: Executar testes
+<<<<<<< HEAD
         run: poetry run task test
+=======
+        run: poetry run task test 
+>>>>>>> 405e88e (alterando branch)
