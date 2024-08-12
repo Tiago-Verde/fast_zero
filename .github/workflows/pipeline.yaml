@@ -12,7 +12,7 @@ jobs:
           python-version: '3.11'
 
       - name: PWD
-        run: pwd 
+        run: cd .. && pwd 
       
       - name: Instalar o poetry
         run: pipx install poetry 
