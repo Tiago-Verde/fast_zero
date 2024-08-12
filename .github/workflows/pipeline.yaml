@@ -10,22 +10,12 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
-      - name: PWD
-        run: cd .. && pwd 
-      
+   
       - name: Instalar o poetry
         run: pipx install poetry 
-
-      - name: cd
-        run: cd .. && pwd 
 
       - name: Instalar dependências
         run: poetry install
 
       - name: Executar testes
-<<<<<<< HEAD
         run: poetry run task test
-=======
-        run: poetry run task test 
->>>>>>> 405e88e (alterando branch)
