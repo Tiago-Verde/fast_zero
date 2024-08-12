@@ -9,7 +9,6 @@ jobs:
       - name: Copia os arquivos do repositório
         uses: actions/checkout@v3
 
-    steps:
       - name: Instalar o python
         uses: actions/setup-python@v5
         with:
