@@ -67,6 +67,7 @@ def list_todos(
     return {'todos': todos}
 
 
+
 @router.delete('/{todo_id}', response_model=Message)
 def delete_todo(todo_id: int, session: T_Session, user: CurrentUser):
     todo = session.scalar(
