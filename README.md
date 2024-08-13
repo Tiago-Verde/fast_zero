@@ -6,7 +6,7 @@ Esta é uma API de lista de tarefas desenvolvida em Python utilizando o framewor
 
 ## Tecnologias Utilizadas
 
-<code><img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL" width="30"/></code> <code><img width="30" src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/Python-Dark.svg" alt="Python" title="Python"/></code> <code><img width="30" src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/FastAPI.svg" alt="FastApi" title="FastApi"></code> <code><img src="https://www.sqlalchemy.org/img/sqla_logo.png" alt="SQLAlchemy" width="120"/></code>
+<code><img src="https://www.postgresql.org/media/img/about/press/elephant.png" alt="PostgreSQL" width="30"/></code> <code><img width="30" src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/Python-Dark.svg" alt="Python" title="Python"/></code> <code><img width="30" src="https://raw.githubusercontent.com/tandpfun/skill-icons/65dea6c4eaca7da319e552c09f4cf5a9a8dab2c8/icons/FastAPI.svg" alt="FastApi" title="FastApi"></code> <code><img src="https://www.sqlalchemy.org/img/sqla_logo.png" alt="SQLAlchemy" width="120"/></code> <code><img src="https://avatars.githubusercontent.com/u/110818415?s=200&v=4" alt="Pydantic" title="Pydantic" width="30"></code>
 
 ## Funcionalidades
 
